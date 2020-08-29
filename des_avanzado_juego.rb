@@ -1,4 +1,4 @@
-#Método Menú
+
 def menu(player)
     puts "Player #{player} it's your turn:
         Enter [ 1 ] for: Stone
@@ -7,7 +7,9 @@ def menu(player)
         Enter [ 4 ] for: Exit"
 end
 
+
 def validation(player, option)
+
     puts "\n\nInvalid option, choose again\n\n"
     menu(player)
 
@@ -16,40 +18,41 @@ def validation(player, option)
 end
 
 menu(1)
-option__A = gets.chomp.to_i    
+option__a = gets.chomp.to_i    
 
 
-unless (option__A == 4)
+unless (option__a == 4)
 
-    if (option__A > 4 || option__A < 1) 
+    if (option__a > 4 || option__a < 1) 
         menu(1)
-        option__A = validation(1, option__A)
+        option__a = validation(1, option__a)
     end
 
-    unless (option__A == 4)
+    unless (option__a == 4)
         menu(2)
-        option__B = gets.chomp.to_i
+        option__b = gets.chomp.to_i
 
-        if (option__B > 4 || option__B < 1) 
+        if (option__b > 4 || option__b < 1) 
             menu(2)
-            option__B = validation(2, option__B)
+            option__b = validation(2, option__b)
         end
 
-        unless (option__B == 4)
-            case(option__A)
+        unless (option__b == 4 && option__b > 4 && option__b < 1)
+
+            case(option__a)
 
             when 1
-                puts "It's a TIE" if option__B == 1
-                puts "PLAYER 2 wins" if option__B == 2
-                puts "PLAYER 1 wins" if option__B == 3
+                puts "It's a TIE" if option__b == 1
+                puts "PLAYER 2 wins" if option__b == 2
+                puts "PLAYER 1 wins" if option__b == 3
             when 2
-                puts "it's a TIE" if option__B == 2
-                puts "PLAYER 2 wins" if option__B == 3
-                puts "PLAYER 1 wins" if option__B == 1
+                puts "it's a TIE" if option__b == 2
+                puts "PLAYER 2 wins" if option__b == 3
+                puts "PLAYER 1 wins" if option__b == 1
             when 3
-                puts "It's a TIE" if option__B == 3
-                puts "PLAYER 2 wins" if option__B == 1
-                puts "PLAYER 1 wins" if option__B == 2
+                puts "It's a TIE" if option__b == 3
+                puts "PLAYER 2 wins" if option__b == 1
+                puts "PLAYER 1 wins" if option__b == 2
             end
         end
     end
