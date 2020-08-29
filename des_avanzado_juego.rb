@@ -7,8 +7,8 @@ def menu(player)
         Enter [ 4 ] for: Exit"
 end
 
-def validator(player, option)
-    puts "Invalid option, choose again"
+def validation(player, option)
+    puts "\n\nInvalid option, choose again\n\n"
     menu(player)
 
     option = gets.chomp.to_i
@@ -16,24 +16,28 @@ def validator(player, option)
 end
 
 menu(1)
-option__A = gets.chomp.to_i
+option__A = gets.chomp.to_i    
+
 
 unless (option__A == 4)
-    while (option__A > 4 || option__A < 1) do
+
+    if (option__A > 4 || option__A < 1) 
         menu(1)
-        option__A = validator(1, option__A)
+        option__A = validation(1, option__A)
     end
+
     unless (option__A == 4)
         menu(2)
         option__B = gets.chomp.to_i
 
-        while (option__B > 4 || option__B < 1) do
+        if (option__B > 4 || option__B < 1) 
             menu(2)
-            option__B = validator(2, option__B)
+            option__B = validation(2, option__B)
         end
 
         unless (option__B == 4)
             case(option__A)
+
             when 1
                 puts "It's a TIE" if option__B == 1
                 puts "PLAYER 2 wins" if option__B == 2
