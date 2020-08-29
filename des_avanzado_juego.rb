@@ -1,4 +1,3 @@
-
 def menu(player)
     puts "Player #{player} it's your turn:
         Enter [ 1 ] for: Stone
@@ -6,7 +5,6 @@ def menu(player)
         Enter [ 3 ] for: Scissors
         Enter [ 4 ] for: Exit"
 end
-
 
 def validation(player, option)
 
