@@ -18,19 +18,21 @@ end
 menu(1)
 option_1 = gets.chomp.to_i
 
-unless (option_1 == 4 )
+unless (option_1 == 4)
     while (option_1 > 4 || option_1 < 1) do
         menu(1)
         option_1 = validator(1, option_1)
     end
-    unless (option_1 == 4
+    unless (option_1 == 4)
+        menu(2)
         option_2 = gets.chomp.to_i
 
         while (option_2 > 4 || option_2 < 1) do
+            menu(2)
             option_2 = validator(2, option_2)
         end
 
-        unless (option_2 == 4 )
+        unless (option_2 == 4)
             case(option_1)
             when 1
                 puts "It's a TIE" if option_2 == 1
